@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github_issue_tracker|Login </title>
+
+    <!-- daisy ui and tailwind setup -->
+     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- font awesome setup -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+     <!-- Google font-GEISt -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+      <!-- style -->
+       <style>
+        *{
+            font-family: "Geist", sans-serif;;
+        }
+       </style>
+</head>
+<body>
+    <section class=" w-full max-w-[500px] min-h-[100vh] md:min-h-[90vh] md:w-[500px] mx-auto my-[0px] md:my-[5vh] bg-[#FFFFFF] shadow-sm rounded-none md:rounded-[10px] flex flex-col justify-center items-center ">
+        <div class="logo flex flex-col justify-center items-center">
+            <div><img src="assets/github-logo.png" alt="github_logo"></div>
+            <h1 class="text-[24px] font-semibold text-[#1F2937]">GitHub Issues Tracker</h1>
+            <p class="text-[16px] text-[#64748B]">Sign in to manage your issues</p>
+        </div>
+    <fieldset class="my-[24px] flex flex-col space-y-2 w-full max-w-[80vw] md:max-w-[450px] mx-auto">
+  
+        <label class="text-[16px] text-[#1F2937] font-medium" for="Username">Username</label>
+        <input class="border border-black/10 bg-base-200 rounded-[8px] px-[5px] py-[5px] md:px-[10px] md:py-[10px] w-full" type="text" id="Username" placeholder="Enter Username">
+        <p class="text-[14px] text-[#4A00FF]">Default: admin</p>
+
+        <label class="text-[16px] text-[#1F2937] font-medium" for="Password">Password</label>
+       <input class="border border-black/10 bg-base-200 rounded-[8px] px-[5px] py-[5px] md:px-[10px] md:py-[10px] w-full" type="password" id="Password" placeholder="Enter Password">
+       <p class="text-[14px] text-[#4A00FF]">Default: admin123</p> 
+       <button id="clickme" class="btn btn-primary w-[80vw] md:w-[450px] rounded-[10px]">Sign In</button>
+    </fieldset>
+     
+     <div class="flex my-[20px] w-full max-w-[80vw] md:max-w-[450px] mx-auto space-x-1">
+        <div class="my-auto flex-1">
+             <div class="border border-black/10"></div>
+        </div>
+       <div>OR</div>
+       <div class="my-auto flex-1">
+             <div class="border border-black/10"></div>
+        </div>
+     </div>
+     <div class="w-full max-w-[80vw] md:max-w-[450px] mx-auto mb-[30px]">
+        <h2 class=" text-center text-[14px] text-[#64748B]">Demo Credentials:</h2>
+        <div class="bg-base-200 rounded-[5px] py-[30px] flex flex-col justify-center items-center">
+            <h1 class="text-[16px] text-[#1F2937]"> <span class=" font-bold">Username:</span>  admin</h1>
+            <h1 class="text-[16px] text-[#1F2937] "> <span class=" font-bold">Password:</span> admin123</h1>
+        </div>
+     </div>
+    </section>
+    <script>
+         document.getElementById('clickme').addEventListener('click',
+         function(){
+            let getName=document.getElementById('Username').value;
+            let getPass=document.getElementById('Password').value;
+            if(getName=='admin'&&getPass=='admin123'){
+                window.location.assign('./front_page.html');
+            }else{
+                alert('Invalid password or username');
+            }
+         }
+          )
+    </script>
+
+</body>
+</html>
