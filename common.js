@@ -2,6 +2,8 @@
 //show functionality
 
 async function show (str)  {
+    let getcardholder=document.getElementById('cardHolder');
+    getcardholder.innerHTML=``;
     let res= await fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues');
     let res_json= await res.json();
     let cnt=0;
@@ -9,9 +11,9 @@ async function show (str)  {
     console.log(res_json.data);
     console.log(res_json.data[0]);
     for(let i=0;i<res_json.data.length;i++){
+         if(res_json.data[i].status==str)continue;
+         cnt++;
         const divcontaier=[];
-        console.log(res_json.data[i].labels);
-        if(res_json.data[i].status=='str')continue;
         for(let j=0;j<res_json.data[i].labels.length;j++){
              divcontaier.push(creatDiv(res_json.data[i].labels[j]));
         }
@@ -62,9 +64,11 @@ async function show (str)  {
             creatcard.classList.add('purple_border')
         }
         creatcard.classList.add('card');
-        let getcardholder=document.getElementById('cardHolder');
+        
         getcardholder.append(creatcard);
     }
+    let getcount=document.getElementById('cnt');
+    getcount.innerText=cnt.toString();
 }
 
 function creatDiv(str){
