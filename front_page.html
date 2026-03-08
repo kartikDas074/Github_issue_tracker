@@ -16,13 +16,72 @@
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
-
+      
       <!-- style -->
        <style>
         *{
             font-family: "Geist", sans-serif;;
         }
+        .High{  
+            background-color:#FEECEC;
+            
+            color:#EF4444;
+            padding: 3px 20px;
+            border-radius: 10px;
+        }
+        .Medium{
+            background-color:#FFF6D1 ;
+            color:#F59E0B;
+            padding: 3px 10px;
+            border-radius: 10px;
+        }
+        .Low{
+            background-color:#EEEFF2;
+            color:#9CA3AF;
+            padding: 3px 10px;
+            border-radius: 30px;
+        }
+        .Enhancement{
+           color:#00A96E;
+           background-color: #DEFCE8;
+            padding: 3px 5px;
+            border-radius: 30px;
+        }
+        .txt{
+            font-size: 12px;
+        }
+        
+        .card{
+            border-radius:5px;
+            padding: 6px 5px;
+            display: flex;
+            flex-direction: col;
+            justify-content: center;
+            min-height: 260px;
+            gap:8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            background-color: #FFFFFF;
+            width: 100%;
+            max-width: 350px;
+        }
+        .flexing{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .ht{
+            height: 50px;
+        }
+        .green_border{
+            border-top: 4px solid green;
+            
+        }
+        .purple_border{
+             border-top: 4px solid purple;
+            
+        }
        </style>
+       <!-- class="card  border-t-green-500 border-t-[4px] rounded-[5px] px-[5px] py-[10px] md:px-[10px] flex flex-col space-y-[8px]" -->
 </head>
 <body>
     <header class=" w-full max-w-[90vw] md:max-w-[80vw] flex flex-col md:flex-row
@@ -48,8 +107,8 @@
        <button id="opend" class="btn w-[80%] md:w-[150px] text-[#64748B]">Open</button>
        <button id="closed" class="btn w-[80%] md:w-[150px] text-[#64748B]">Close</button>
     </section>
-    <section class="w-full max-w-[90vw] md:max-w-[80vw] mx-auto my-[30px] shadow-sm bg-base-500">
-       <header class="flex flex-col md:flex-row space-x-1 space-y-2 justify-between items-center px-[20px] py-[20px]">
+    <section class="w-full max-w-[90vw] md:max-w-[80vw] mx-auto my-[30px] shadow bg-[#FBFBFB]">
+       <header class="shadow-sm bg-[#FFFFFF] mb-[30px] flex flex-col md:flex-row space-x-1 space-y-2 justify-between items-center px-[20px] py-[20px]">
         <div class="flex space-x-1 justify-center items-center">
             <div><img src="assets/Aperture.png" alt=""></div>
             <div>
@@ -67,8 +126,10 @@
             
         </div>
        </header>
+       <div id="cardHolder" class="w-[90%] grid grid-cols-1 md:grid-cols-4 gap-[10px] mx-auto">
+       </div>
     </section>
-
+    <script src="common.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
