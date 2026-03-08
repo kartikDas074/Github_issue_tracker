@@ -25,7 +25,50 @@
        </style>
 </head>
 <body>
-    <h1>Plz forgive me for being gay</h1>
-    
+    <header class=" w-full max-w-[90vw] md:max-w-[80vw] flex flex-col md:flex-row
+    justify-center  md:justify-between items-center mx-auto py-[10px]">
+        <div class="flex space-x-1 items-center mb-[16px]">
+            <div class="h-[50px] w-[50px]"><img src="assets/github-logo.png" alt="github logo"></div>
+            <h1 class="text-[14px] md:text-[24px] text-[#1F2937] font-semibold">GitHub Issues Tracker</h1>
+        </div>
+        <div class="flex flex-col  md:flex-row space-y-1 md:space-x-1 items-center ">
+              <div class=" w-full   relative mb-[16px] md:mb-[0px]">
+                 <i id="icon" class="fa-solid fa-magnifying-glass absolute translate-y-4 translate-x-1"></i>
+                 <input class=" w-full border border-black/10 bg-base-200 rounded-[8px] px-[30px] py-[5px] md:px-[30px] md:py-[10px] " type="text" name="" id="search" placeholder="Search issues...">
+              </div>
+              <button  id="srcbar" class="btn btn-primary w-full md:w-auto">
+                <i class="fa-solid fa-plus"></i>
+                New Issue
+              </button>
+        </div>
+    </header>
+    <div class="border border-black/10"></div>
+    <section class="w-full max-w-[90vw] md:max-w-[80vw] flex flex-col md:flex-row shadow-sm  mx-auto my-[30px] rounded-[5px] py-[10px] px-[10px] space-x-2 space-y-2 md:space-y-0 justify-center items-center md:justify-start">
+       <button id="all" class="btn btn-primary w-[80%] md:w-[150px] ">All</button>
+       <button id="opend" class="btn w-[80%] md:w-[150px] text-[#64748B]">Open</button>
+       <button id="closed" class="btn w-[80%] md:w-[150px] text-[#64748B]">Close</button>
+    </section>
+    <section class="w-full max-w-[90vw] md:max-w-[80vw] mx-auto my-[30px] shadow-sm bg-base-500">
+       <header class="flex flex-col md:flex-row space-x-1 space-y-2 justify-between items-center px-[20px] py-[20px]">
+        <div class="flex space-x-1 justify-center items-center">
+            <div><img src="assets/Aperture.png" alt=""></div>
+            <div>
+                <h1 class="text-[#1F2937] text-[20px] font-semibold"><span id="cnt"></span> Issues</h1>
+                <p class="text-[#64748B] text-[16px]">Track and manage your project issues</p>
+            </div>
+        </div>
+        <div class="flex space-x-2 justify-center items-center">
+            <div class="flex justify-center items-center space-x-2"><div class="h-[10px] w-[10px] rounded-[50%] bg-green-500">
+            </div>
+            <h1 class="text-[#1F2937]">Open</h1></div>
+            <div class="flex justify-center items-center space-x-2"><div class="h-[10px] w-[10px] rounded-[50%] bg-purple-500">
+            </div>
+            <h1 class="text-[#1F2937]">Closed</h1></div>
+            
+        </div>
+       </header>
+    </section>
+
+    <script src="script.js"></script>
 </body>
 </html>
