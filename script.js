@@ -62,3 +62,22 @@ if(all==1){
     getop.classList.add('changebnt');
 }
 }
+
+//search functionality modify for searchbar is empty
+
+let getsearch=document.getElementById('search');
+getsearch.addEventListener('input',
+    function(){
+        if(getsearch.value.length==0)cheakme();
+    }
+)
+
+//search for only using enter keyword
+
+getsearch.addEventListener ("keydown", function(e){
+
+    if(e.key === "Enter"){
+        cheakme(2);
+    }
+
+});

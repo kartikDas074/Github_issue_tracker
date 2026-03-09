@@ -16,7 +16,10 @@ function clearme(){
     getSrc.value='';
 }
 async function search_me(str) {
-      let getSrc=document.getElementById('search').value;
+       let getSrc='';
+       getSrc=document.getElementById('search').value;
+      if(getSrc.length==0){show(str);return;}
+      console.log(getSrc.length);
       let url=`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${getSrc}`;
       console.log(url);
       console.log(url);
