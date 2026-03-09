@@ -200,7 +200,7 @@ async function modale(id) {
             </div>
             <div>
                 <h1 class="text-[16px] text-[#64748B]">Priority:</h1>
-                <p class="${pro} flex justify-center items-center">${priority}</p>
+                <p class="${pro} flex justify-center max-w-[150px] items-center">${priority}</p>
             </div>
         </div>
         <div class="flex justify-end">
