@@ -2,8 +2,11 @@
 //show functionality
 
 async function show (str)  {
+    const loader = document.getElementById("loader");
+    loader.classList.remove("hidden"); 
     let res= await fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues');
     let res_json= await res.json();
+    loader.classList.add("hidden");
     // console.log(res_json);
     // console.log(res_json.data);
     // console.log(res_json.data[0]);
@@ -22,9 +25,11 @@ async function search_me(str) {
        getSrc=document.getElementById('search').value;
       if(getSrc.length==0){show(str);return;}
       let url=`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${getSrc}`;
-
+       const loader = document.getElementById("loader");
+       loader.classList.remove("hidden"); 
       let res= await fetch(url);
       let res_json= await res.json();
+      loader.classList.add("hidden");
       commonshow(str,res_json);
 } 
 function commonshow(str,res_json){
@@ -138,11 +143,13 @@ function creatDiv(str){
 
 
 async function modale(id) {
-    
+    const loader = document.getElementById("loader");
+    loader.classList.remove("hidden"); 
     let url=`https://phi-lab-server.vercel.app/api/v1/lab/issue/${id}`;
     let res=await fetch(url);
     let res_json= await res.json();
-    console.log(res_json);
+    loader.classList.add("hidden");
+    //console.log(res_json);
     //creat modal
     let creatmod=document.createElement('div');
    //get title

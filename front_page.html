@@ -97,6 +97,15 @@
             justify-content:center;
             align-items:center;
         }
+        #spinner{
+            width:40px;
+            height:40px;
+            border:4px solid #bfdbfe;
+            border-top:4px solid #3b82f6;
+            border-left: 4px solid #3b82f6;;
+            border-bottom: 4px solid #3b82f6;
+            border-radius:50%;
+        }
        </style>
       
 </head>
@@ -143,10 +152,14 @@
             
         </div>
        </header>
-       <div id="cardHolder" class="w-full max-w-[90%] grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-[10px] mx-auto">
+       <div id="cardHolder" class="w-full max-w-[90%] grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-[10px] mx-auto my-[30px] py-[30px]">
+        
        </div>
     </section>
-     
+      <!-- spinner -->
+     <div id="loader" class="hidden flex justify-center mt-5">
+     <div id="spinner"></div>
+     </div>
     
 
     
