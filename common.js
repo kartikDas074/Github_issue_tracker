@@ -151,7 +151,7 @@ async function modale(id) {
    //get status
    let status=res_json.data.status;
    //get assignee
-   let assignee=res_json.data.assignee;
+   let assignee=res_json.data.author;
    //get createdAt
    let createdAt=res_json.data.createdAt;
    //get lavel
@@ -165,15 +165,15 @@ async function modale(id) {
     //get priority
     let priority=res_json.data.priority;
     let pro='High';
-    if(priority=='Medium')pro='Medium';
-    else if(priority=='Low')pro='Low';
+    if(priority=='medium')pro='Medium';
+    else if(priority=='low')pro='Low';
 
 
     creatmod.innerHTML=`
        <div class="flex flex-col w-full max-w-[90vw] md:w-[450px] lg:w-[700px] shadow-sm bg-[#FFFFFF] rounded-sm px-[5px] py-[10px] md:px-[50px] md:py-[50px] gap-[16px] mx-auto">
        <h1 class=" text-[16px] md:text-[24px] text-[#1F2937] font-semibold">${title}</h1>
        <div class="flex flex-col md:flex-row gap-[10px] ">
-            <div class="stat px-[10px] py-[3px] max-w-[200px] bg-[#00A96E] text-[#FFFFFF] rounded-[15px]">${status}</div>
+            <div class="stat flex justify-center items-center px-[10px] py-[3px] max-w-[200px] bg-[#00A96E] text-[#FFFFFF] rounded-[15px]">${status}</div>
             <div class="flex flex-col  md:flex-row gap-[10px] items-center">
             <div class="hidden md:flex h-[5px] w-[5px] bg-black/50 text-[12px] text-[#64748B] rounded-[50%]"></div>
             <div class="text-[12px] text-[#64748B]">opend by ${assignee}</div>
@@ -191,11 +191,11 @@ async function modale(id) {
             </div>
             <div>
                 <h1 class="text-[16px] text-[#64748B]">Priority:</h1>
-                <p class="${pro} ">${priority}</p>
+                <p class="${pro} flex justify-center items-center">${priority}</p>
             </div>
         </div>
         <div class="flex justify-end">
-            <button it="btno" class="btn  btn-primary text-[#FFFFFF]">close</button>
+            <button id="btno" class="btn  btn-primary text-[#FFFFFF]">close</button>
         </div>
        </div>
     `
@@ -204,7 +204,9 @@ async function modale(id) {
          getcardch.appendChild(div);
         });
     creatmod.classList.add('cas-modal');
-    creatmod.style.display='block';
-    let body=document.getElementById('cardHolder');
-    body.append(creatmod);
+    creatmod.style.display='flex';
+    if(status!='open')creatmod.querySelector('.stat').style.backgroundColor = '#A855F7';
+    let bod=document.getElementById('cardHolder');
+    bod.append(creatmod);
+
 } 

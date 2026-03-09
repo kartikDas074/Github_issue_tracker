@@ -28,6 +28,10 @@ document.addEventListener('click',
             cheakme();
         }else if(e.target.id=='srcbar'){
             cheakme(2);
+        }else if(e.target.id=='btno'){
+            let get =e.target.closest('.cas-modal');
+            get.style.display='none';
+            //console.log('ami i ok')
         }else if(e.target.closest('.card')){
             //get the card first
             let cardi=e.target.closest('.card');
