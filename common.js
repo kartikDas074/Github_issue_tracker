@@ -2,14 +2,32 @@
 //show functionality
 
 async function show (str)  {
-    let getcardholder=document.getElementById('cardHolder');
-    getcardholder.innerHTML=``;
     let res= await fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues');
     let res_json= await res.json();
-    let cnt=0;
-    console.log(res_json);
-    console.log(res_json.data);
-    console.log(res_json.data[0]);
+    // console.log(res_json);
+    // console.log(res_json.data);
+    // console.log(res_json.data[0]);
+    commonshow(str,res_json);
+}
+
+//make empty
+function clearme(){
+    let getSrc=document.getElementById('search');
+    getSrc.value='';
+}
+async function search_me(str) {
+      let getSrc=document.getElementById('search').value;
+      let url=`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${getSrc}`;
+      console.log(url);
+      console.log(url);
+      let res= await fetch(url);
+      let res_json= await res.json();
+      commonshow(str,res_json);
+} 
+function commonshow(str,res_json){
+   let cnt=0;
+    let getcardholder=document.getElementById('cardHolder');
+    getcardholder.innerHTML=``;
     for(let i=0;i<res_json.data.length;i++){
          if(res_json.data[i].status==str)continue;
          cnt++;
