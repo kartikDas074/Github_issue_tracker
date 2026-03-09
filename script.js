@@ -28,6 +28,16 @@ document.addEventListener('click',
             cheakme();
         }else if(e.target.id=='srcbar'){
             cheakme(2);
+        }else if(e.target.closest('.card')){
+            //get the card first
+            let cardi=e.target.closest('.card');
+
+            //find the id of that spacific card according to api
+            let cnt=cardi.querySelector('#cnt');
+            let id=cnt.innerText;
+
+            //madale functionality
+             modale(id);
         }
     }
 )
