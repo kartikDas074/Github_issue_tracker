@@ -156,7 +156,6 @@ async function modale(id) {
     let creatmod=document.createElement('div');
    //get title
    let title=res_json.data.title;
-   console.log(title);
    //get status
    let status=res_json.data.status;
    //get assignee
@@ -174,10 +173,11 @@ async function modale(id) {
     //get priority
     let priority=res_json.data.priority;
     let pro='High';
-    if(priority=='medium')pro='Medium';
-    else if(priority=='low')pro='Low';
+    let col='EF4444';
+    if(priority=='medium'){pro='Medium';col='D97706';}
+    else if(priority=='low'){pro='Low';col='9CA3AF';}
 
-
+    
     creatmod.innerHTML=`
        <div class="flex flex-col w-full max-w-[90vw] md:w-[450px] lg:w-[700px] shadow-sm bg-[#FFFFFF] rounded-sm px-[5px] py-[10px] md:px-[50px] md:py-[50px] gap-[16px] mx-auto">
        <h1 class=" text-[16px] md:text-[24px] text-[#1F2937] font-semibold">${title}</h1>
@@ -193,14 +193,14 @@ async function modale(id) {
         <div class="ht cardchild flex justify-start items-center">  
              </div>
           <p class="ht text-[16px] text-[#64748B]">${des}</p>
-          <div class="grid grid-cols-1 md:grid-cols-2 bg-[#F8FAFC] mx-[20px]">
+          <div class="grid grid-cols-1 md:grid-cols-2 bg-[#F8FAFC] mx-[20px] px-[20px] py-[20px]">
             <div>
                 <h1 class="text-[16px] text-[#64748B]">Assignee:</h1>
                 <p class=" text-[16px] font-semibold text-[#1F2937]">${assignee}</p>
             </div>
             <div>
                 <h1 class="text-[16px] text-[#64748B]">Priority:</h1>
-                <p class="${pro} flex justify-center max-w-[150px] items-center">${priority}</p>
+                <p class=" flex justify-center max-w-[150px] items-center   bg-[#${col}] text-[#FFFFFF] px-[10px] py-[10px] rounded-[10px]">${priority}</p>
             </div>
         </div>
         <div class="flex justify-end">
