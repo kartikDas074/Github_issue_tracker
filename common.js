@@ -46,7 +46,9 @@ function commonshow(str,res_json){
         }
         //get the priority s
         let priority=res_json.data[i].priority;
-        
+        let pro='High';
+        if(priority=='medium')pro='Medium';
+        else if(priority=='low')pro='Low';
 
         //get tittle and descripstion...
         let title=res_json.data[i].title;
@@ -73,7 +75,7 @@ function commonshow(str,res_json){
            <p id="cnt" class="hidden">${idd}</p>
            <div class="ht flex justify-between items-center">
                  <div><img src="${url}" alt=""></div> 
-                <div class="High">${priority}</div>
+                <div class="${pro}">${priority}</div>
              </div>
               <h1 class="ht text-[16px] font-semibold text-[#1F2937]">${title}</h1>
              <p class="ht text-[12px] text-[#64748B]">${des}</p>
@@ -81,8 +83,8 @@ function commonshow(str,res_json){
              </div>
              <div class=" border border-black/10"></div>
              <div class="ht">
-                <p class=" text-[12px] text-[#64748B]">${author}</p>
-                <p class=" text-[12px] text-[#64748B]">${creat}</p>
+                <p class=" text-[16px] text-[#64748B]">${author}</p>
+                <p class=" text-[16px] text-[#64748B]">${creat}</p>
              </div>
        `
        let getcardch=creatcard.querySelector('.cardchild');
